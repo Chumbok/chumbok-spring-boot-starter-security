@@ -11,7 +11,7 @@
 
     <groupId>com.chumbok</groupId>
     <artifactId>chumbok-spring-boot-starter-security</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <packaging>jar</packaging>
 
     <name>Chumbok Spring Boot Starter Security</name>
@@ -25,7 +25,7 @@
     </scm>
 
     <properties>
-        <chumbok-security.version>4.0.2</chumbok-security.version>
+        <chumbok-security.version>4.0.3</chumbok-security.version>
     </properties>
 
     <dependencies>
