@@ -7,7 +7,10 @@ import com.chumbok.security.util.EncryptionKeyUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.filter.CorsFilter;
 
 @EnableWebSecurity
 @ConditionalOnProperty(name = "com.chumbok.security.enable", havingValue = "true", matchIfMissing = false)
@@ -15,6 +18,7 @@ public class ChumbokSecurityConfig extends AbstractSecurityConfig {
 
     private EncryptionKeyUtil encryptionKeyUtil;
     private SecurityProperties securityProperties;
+    private CorsFilter corsFilter;
 
     /**
      * Construct security config with encryptionKeyUtil and securityProperties.
@@ -22,10 +26,12 @@ public class ChumbokSecurityConfig extends AbstractSecurityConfig {
      * @param encryptionKeyUtil
      * @param securityProperties
      */
-    public ChumbokSecurityConfig(EncryptionKeyUtil encryptionKeyUtil, SecurityProperties securityProperties) {
+    public ChumbokSecurityConfig(EncryptionKeyUtil encryptionKeyUtil, SecurityProperties securityProperties,
+                                 CorsFilter corsFilter) {
         setSecurityProperties(securityProperties);
         this.encryptionKeyUtil = encryptionKeyUtil;
         this.securityProperties = securityProperties;
+        this.corsFilter = corsFilter;
     }
 
     /**
@@ -61,4 +67,9 @@ public class ChumbokSecurityConfig extends AbstractSecurityConfig {
         super.setSecurityProperties(securityProperties);
     }
 
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        super.configure(http);
+        http.addFilterBefore(corsFilter, UsernamePasswordAuthenticationFilter.class);
+    }
 }
