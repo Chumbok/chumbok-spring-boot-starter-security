@@ -6,12 +6,12 @@
     <parent>
         <groupId>com.chumbok</groupId>
         <artifactId>chumbok-starter-parent</artifactId>
-        <version>3.0.0</version>
+        <version>5.0.0</version>
     </parent>
 
     <groupId>com.chumbok</groupId>
     <artifactId>chumbok-spring-boot-starter-security</artifactId>
-    <version>2.0.1</version>
+    <version>2.1.0</version>
     <packaging>jar</packaging>
 
     <name>Chumbok Spring Boot Starter Security</name>
@@ -25,7 +25,7 @@
     </scm>
 
     <properties>
-        <chumbok-security.version>4.1.2</chumbok-security.version>
+        <chumbok-security.version>4.2.0</chumbok-security.version>
     </properties>
 
     <dependencies>
