@@ -11,7 +11,7 @@
 
     <groupId>com.chumbok</groupId>
     <artifactId>chumbok-spring-boot-starter-security</artifactId>
-    <version>2.1.2-SNAPSHOT</version>
+    <version>2.1.2</version>
     <packaging>jar</packaging>
 
     <name>Chumbok Spring Boot Starter Security</name>
@@ -21,7 +21,7 @@
         <connection>scm:git:https://github.com/ChumbokIT/${project.artifactId}.git</connection>
         <developerConnection>scm:git:https://github.com/ChumbokIT/${project.artifactId}.git</developerConnection>
         <url>https://github.com/ChumbokIT/${project.artifactId}</url>
-        <tag>HEAD</tag>
+        <tag>2.1.2</tag>
     </scm>
 
     <properties>
