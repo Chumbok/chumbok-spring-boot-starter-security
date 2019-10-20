@@ -67,6 +67,12 @@ public class ChumbokSecurityConfig extends AbstractSecurityConfig {
         super.setSecurityProperties(securityProperties);
     }
 
+    @Autowired
+    @Override
+    protected void setCorsFilters(CorsFilter corsFilters) {
+        super.setCorsFilters(corsFilters);
+    }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         super.configure(http);
